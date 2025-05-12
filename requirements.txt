@@ -26,10 +26,10 @@ MarkupSafe==3.0.2
 matplotlib==3.8.0
 mdurl==0.1.2
 narwhals==1.23.0
-numba==0.60.0
-numpy==1.26.4
+#numba==0.60.0
+#numpy==1.26.4
 packaging==24.2
-pandas==1.5.3
+#pandas==1.5.3
 pillow==11.1.0
 protobuf==5.29.3
 pyarrow==19.0.0
@@ -42,10 +42,9 @@ referencing==0.36.2
 requests==2.32.3
 rich==13.9.4
 rpds-py==0.22.3
-scikit-learn==1.2.2
-scipy==1.13.1
+#scikit-learn==1.2.2
+#scipy==1.13.1
 seaborn==0.13.1
-shap==0.44.0
 six==1.17.0
 slicer==0.0.7
 smmap==5.0.2
@@ -54,9 +53,7 @@ tenacity==9.0.0
 threadpoolctl==3.5.0
 toml==0.10.2
 tornado==6.4.2
-tqdm==4.66.1
 typing_extensions==4.12.2
 urllib3==2.3.0
 watchdog==6.0.0
-xgboost==2.0.1
 zipp==3.21.0
