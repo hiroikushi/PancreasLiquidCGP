@@ -40,18 +40,26 @@ st.markdown(
             radial-gradient(circle at 92% 18%, rgba(22, 166, 161, .12), transparent 28rem),
             #f7f8fc;
         color: var(--ink);
+        color-scheme: light;
     }
-    .stApp,
-    .stApp p,
-    .stApp label,
-    .stApp [data-testid="stWidgetLabel"],
-    .stApp [data-testid="stMarkdownContainer"] {
-        color: var(--ink);
+
+    /* Keep every nested form element readable when the device uses dark mode. */
+    .stApp div[data-testid="stVerticalBlockBorderWrapper"],
+    .stApp div[data-testid="stVerticalBlockBorderWrapper"] p,
+    .stApp div[data-testid="stVerticalBlockBorderWrapper"] span,
+    .stApp div[data-testid="stVerticalBlockBorderWrapper"] label {
+        color: #243b53;
     }
-    .stApp input {
-        color: var(--ink) !important;
-        background-color: white !important;
-        -webkit-text-fill-color: var(--ink) !important;
+    .stApp div[data-baseweb="input"],
+    .stApp div[data-baseweb="select"] > div {
+        background-color: #ffffff;
+        color: #243b53;
+    }
+    .stApp div[data-baseweb="input"] input,
+    .stApp div[data-baseweb="select"] span,
+    .stApp div[data-baseweb="select"] input {
+        color: #243b53 !important;
+        -webkit-text-fill-color: #243b53 !important;
     }
     .block-container { max-width: 1180px; padding: 2.4rem 2rem 4rem; }
     #MainMenu, footer, header { visibility: hidden; }
@@ -80,9 +88,9 @@ st.markdown(
         background: rgba(255,255,255,.10); font-size: .74rem; font-weight: 700;
         letter-spacing: .09em; text-transform: uppercase;
     }
-    .hero, .hero h1, .hero .eyebrow { color: white !important; }
+    .stApp .hero, .stApp .hero h1, .stApp .hero .eyebrow { color: white !important; }
     .hero h1 { margin: 0; max-width: 760px; font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.05; letter-spacing: -.045em; }
-    .hero p { max-width: 700px; margin: 1rem 0 0; color: rgba(255,255,255,.78); font-size: 1rem; line-height: 1.65; }
+    .stApp .hero p { max-width: 700px; margin: 1rem 0 0; color: rgba(255,255,255,.78); font-size: 1rem; line-height: 1.65; }
 
     [data-testid="stVerticalBlockBorderWrapper"] {
         background: var(--surface); border-color: var(--line) !important;
@@ -91,6 +99,12 @@ st.markdown(
     h2, h3 { color: var(--ink); letter-spacing: -.025em; }
     div[data-testid="stNumberInput"] input, div[data-testid="stDateInput"] input {
         border-radius: 10px; background: rgba(255,255,255,.9);
+    }
+    div[data-testid="stNumberInput"] label,
+    div[data-testid="stDateInput"] label,
+    div[data-testid="stRadio"] label,
+    div[data-testid="stToggle"] label {
+        color: #243b53; font-weight: 600;
     }
     div[role="radiogroup"] { gap: .35rem; }
     div[role="radiogroup"] label {
@@ -104,6 +118,11 @@ st.markdown(
         box-shadow: 0 10px 25px rgba(101,88,232,.25); transition: .2s ease;
     }
     .stButton > button:hover { color: white; transform: translateY(-2px); box-shadow: 0 14px 30px rgba(101,88,232,.30); }
+    .stApp div[data-testid="stButton"] button,
+    .stApp div[data-testid="stButton"] button p,
+    .stApp div[data-testid="stButton"] button span {
+        color: #ffffff !important;
+    }
     .section-kicker { margin: -.55rem 0 .9rem; color: var(--muted); font-size: .86rem; }
     .result-card {
         padding: 1.4rem 1.5rem; border: 1px solid rgba(101,88,232,.15); border-radius: 18px;
@@ -111,6 +130,12 @@ st.markdown(
     }
     .result-label { color: var(--muted); font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
     .result-value { margin: .25rem 0; font-size: 3.5rem; line-height: 1; font-weight: 800; letter-spacing: -.06em; color: var(--primary); }
+    .stApp .result-card,
+    .stApp .result-card div,
+    .stApp .result-card span { color: #172033; }
+    .stApp .result-card .result-label { color: var(--muted); }
+    .stApp .result-card .result-value,
+    .stApp .result-card .result-value span { color: var(--primary); }
     .result-copy { color: var(--muted); font-size: .9rem; }
     .disclaimer {
         margin-top: 1rem; padding: .85rem 1rem; border-left: 3px solid #f0a33a;
