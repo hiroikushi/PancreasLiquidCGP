@@ -131,7 +131,6 @@ with left:
             sex = st.radio("Sex", ["Woman", "Man"], horizontal=True)
         with basic_2:
             ps = st.radio("ECOG performance status", ["0", "1", "2", "3", "4"], horizontal=True)
-            treatmentline = st.number_input("Current treatment line", min_value=0, max_value=20, value=0, step=1)
 
     with st.container(border=True):
         st.subheader("Clinical timeline")
@@ -141,6 +140,7 @@ with left:
             diagdate = st.date_input("Diagnosis date", datetime.date.today())
         with date_2:
             spedate = st.date_input("Specimen collection date", datetime.date.today())
+        treatmentline = st.number_input("Current treatment line", min_value=0, max_value=20, value=0, step=1)
         response = st.radio("Response", ["PD", "SD", "PR", "CR", "NE"], horizontal=True)
 
 with right:
@@ -222,8 +222,7 @@ if button:
             f"""
             <div class="result-card">
                 <div class="result-label">ctDNA detection probability</div>
-                <div class="result-value">{pred:.2f}<span style="font-size:1.7rem">%</span></div>
-                <div class="result-copy">Estimated by the five-model ensemble.</div>
+                <div class="result-value">{pred:.1f}<span style="font-size:1.7rem">%</span></div>
             </div>
             """,
             unsafe_allow_html=True,
