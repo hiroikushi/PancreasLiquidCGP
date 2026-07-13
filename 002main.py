@@ -28,13 +28,30 @@ st.markdown(
         --line: rgba(101, 88, 232, .13);
     }
 
+    html {
+        color-scheme: light !important;
+        background: #f7f8fc;
+    }
     html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
+    body { background: #f7f8fc; }
     .stApp {
         background:
             radial-gradient(circle at 8% 8%, rgba(101, 88, 232, .13), transparent 29rem),
             radial-gradient(circle at 92% 18%, rgba(22, 166, 161, .12), transparent 28rem),
             #f7f8fc;
         color: var(--ink);
+    }
+    .stApp,
+    .stApp p,
+    .stApp label,
+    .stApp [data-testid="stWidgetLabel"],
+    .stApp [data-testid="stMarkdownContainer"] {
+        color: var(--ink);
+    }
+    .stApp input {
+        color: var(--ink) !important;
+        background-color: white !important;
+        -webkit-text-fill-color: var(--ink) !important;
     }
     .block-container { max-width: 1180px; padding: 2.4rem 2rem 4rem; }
     #MainMenu, footer, header { visibility: hidden; }
@@ -63,6 +80,7 @@ st.markdown(
         background: rgba(255,255,255,.10); font-size: .74rem; font-weight: 700;
         letter-spacing: .09em; text-transform: uppercase;
     }
+    .hero, .hero h1, .hero .eyebrow { color: white !important; }
     .hero h1 { margin: 0; max-width: 760px; font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.05; letter-spacing: -.045em; }
     .hero p { max-width: 700px; margin: 1rem 0 0; color: rgba(255,255,255,.78); font-size: 1rem; line-height: 1.65; }
 
@@ -77,7 +95,7 @@ st.markdown(
     div[role="radiogroup"] { gap: .35rem; }
     div[role="radiogroup"] label {
         padding: .3rem .7rem; border: 1px solid #e6e8f0; border-radius: 10px;
-        background: white;
+        color: var(--ink) !important; background: white;
     }
     .stButton > button {
         width: 100%; min-height: 3.25rem; border: 0; border-radius: 14px;
